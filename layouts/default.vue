@@ -1,7 +1,7 @@
 <template lang="pug">
   .container
     header
-      span Jinrou
+      nuxt-link(to="/").title: span Jinrou
       ul
         li: nuxt-link(to="/game") はじめる
     nuxt
@@ -9,14 +9,25 @@
       a.twitter-link(href="https://twitter.com/jinrou-league")
         img.twitter-icon(src="~/assets/icons/twitter.svg")
 
-      a.twitter-link(href="https://twitter.com/jinrou-league")
-        img.twitter-icon(src="~/assets/icons/wrench.svg")
+      a.twitter-link(href="https://github.com/hxdegawa/web-jinrou")
+        img.twitter-icon(src="~/assets/icons/github.svg")
 
 </template>
 
+<script>
+export default {
+  transition: 'bounce'
+}
+</script>
+
 <style lang="scss">
+html {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
+  min-height: 100vh;
 }
 
 * {
@@ -32,6 +43,11 @@ body {
     height: 60px;
     font-size: 24px;
     font-family: 'norms';
+
+    .title {
+      color: #000000;
+      text-decoration: none;
+    }
 
     ul {
       padding: 0;
@@ -66,6 +82,10 @@ body {
   }
 
   footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
