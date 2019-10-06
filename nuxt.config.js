@@ -26,11 +26,11 @@ export default {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#000000' },
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~assets/css/animation.scss', '~assets/css/variables.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -46,6 +46,12 @@ export default {
    ** Nuxt.js modules
    */
   modules: ['@nuxtjs/pwa'],
+  server: {
+    port: 8000, // デフォルト: 3000
+    host: '0.0.0.0', // デフォルト: localhost,
+    timing: false
+  },
+  serverMiddleware: [{ path: '~~/api/', handler: '~~/api/' }],
   /*
    ** Build configuration
    */
